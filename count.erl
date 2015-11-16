@@ -7,7 +7,7 @@ len([]) -> 0;
 len([_|T]) -> 1 + len(T).
 
 words(S) ->
-    W = re:split(S, "\s+"),
+    W = re:split(string:strip(S), "\s+"),
     len(W).
 
 to_ten(N) when N < 10 ->
